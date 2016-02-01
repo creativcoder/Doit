@@ -1,0 +1,10 @@
+<template name="todoItem">
+    <li>
+    <span>
+    <input class="added-task" disabled={{isDisabled}} type="text" value="{{name}}"> :: {{createdAt_moment}}
+    <a href="#" class="remove-btn">Delete</a>
+    <a href="#" class="edit-btn">Edit</a>
+    </span>
+    </li>
+    <br>
+</template>

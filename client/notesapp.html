@@ -1,13 +1,24 @@
 <head>
   <title>JustDoIt</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
+    <nav>
+    <div class="red accent-2 nav-wrapper">
+      <a href="#" class="brand-logo">&nbsp;&nbsp;Just Do it!</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li onclick="{{change_theme}}"><a href="#">Change Theme</a></li>
+        <li><a href="#">Sync with Dropbox</a></li>
+        <li><a href="#">Github Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
 <div class="container">
-    <h4>Do it now!</h4>
+    
     {{> addTodo}}  
     {{> todos}}
-
 </div>
   
 </body>

@@ -7,17 +7,24 @@ Template.todoItem.events({
         Todos.remove({_id: doc_id});
         }
     },
-    'click .edit-btn': function() {
-        // enter edit mode
-            console.log($(this));
-            $(this).parent().setAttr("id","edit-mode");
-            $('.added-task').prop('disabled',false);
-/*
-        } else {
-            // exit from edit mode
-            Todos.update({_id:this._id},{$set:{'name':$('#edit-mode'+this._id).text()}});
-        }*/
-        
+    'click .edit-btn': function(e) {
+        e.target.parentElement.setAttribute('id','edit-mode');
+        // if in edit mode
+        if( $('.edit-btn').hasClass("editing")) {
+                var updated_task = $('#edit-mode .added-task').val();
+                console.log(updated_task);
+                Todos.update({_id:this._id},{$set:{name:updated_task}});
+                console.log("task updated");
+                $('#edit-mode .editing').text("Edit");
+                $('#edit-mode .edit-btn').toggleClass('editing');
+                $('#edit-mode .added-task').prop('disabled',true);
+                e.target.parentElement.removeAttr('id');
+            } else {
+                // enter in edit mode 
+                $('#edit-mode .edit-btn').text("Save");
+                $('#edit-mode .edit-btn').toggleClass('editing');
+                $('#edit-mode .added-task').prop('disabled',false);
+            }
     }
 });
 

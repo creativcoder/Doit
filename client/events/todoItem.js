@@ -8,6 +8,7 @@ Template.todoItem.events({
         }
     },
     'click .edit-btn': function(e) {
+        even = e;
         e.target.parentElement.setAttribute('id','edit-mode');
         // if in edit mode
         if( $('.edit-btn').hasClass("editing")) {
@@ -18,7 +19,7 @@ Template.todoItem.events({
                 $('#edit-mode .editing').text("Edit");
                 $('#edit-mode .edit-btn').toggleClass('editing');
                 $('#edit-mode .added-task').prop('disabled',true);
-                e.target.parentElement.removeAttr('id');
+                e.target.parentElement.removeAttribute('id');
             } else {
                 // enter in edit mode 
                 $('#edit-mode .edit-btn').text("Save");

@@ -1,7 +1,7 @@
 Template.todoItem.events({
     'click .remove-btn':function(event) {
         event.preventDefault();
-        var confirm = window.confirm("You sure you wanna delete it");
+        var confirm = window.confirm("You sure you wanna delete it ?");
         if(confirm) {
         var doc_id = this._id;
         Todos.remove({_id: doc_id});
@@ -11,11 +11,10 @@ Template.todoItem.events({
         even = e;
         e.target.parentElement.setAttribute('id','edit-mode');
         // if in edit mode
-        if( $('.edit-btn').hasClass("editing")) {
+        if($('.edit-btn').hasClass("editing")) {
                 var updated_task = $('#edit-mode .added-task').val();
                 console.log(updated_task);
                 Todos.update({_id:this._id},{$set:{name:updated_task}});
-                console.log("task updated");
                 $('#edit-mode .editing').text("Edit");
                 $('#edit-mode .edit-btn').toggleClass('editing');
                 $('#edit-mode .added-task').prop('disabled',true);

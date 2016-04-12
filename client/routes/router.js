@@ -1,5 +1,5 @@
 Router.route('/', function() {
-    this.render('blank');
+    this.render('footer');
 })
 
 Router.route('/github/login', function() {

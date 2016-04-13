@@ -1,6 +1,5 @@
-
 Template.navbar.helpers({
-	show_progress: function() {
+	show_progress() {
 		return Session.get('show_progress');
 	}
 })

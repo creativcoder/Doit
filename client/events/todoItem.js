@@ -8,8 +8,9 @@ Template.todoItem.events({
         }
     },
     'click .edit-btn': function(e) {
-        even = e;
-        e.target.parentElement.setAttribute('id','edit-mode');
+        var parent_span = e.target.parentElement;
+        parent_span.setAttribute('id','edit-mode');
+
         // if in edit mode
         if($('.edit-btn').hasClass("editing")) {
                 var updated_task = $('#edit-mode .added-task').val();

@@ -1,7 +1,13 @@
-Router.route('/', function() {
-    this.render('footer');
+FlowRouter.route('/', {
+	name:'home',
+	action() {
+		BlazeLayout.render('layout', holder='addTodo');
+	}
 })
 
-Router.route('/github/login', function() {
-    this.render('github_login');
-});
+FlowRouter.route('/github/login', {
+	name:'gh_login',
+	action() {
+		BlazeLayout.render('layout', holder='github_login');
+	}
+})

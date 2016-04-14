@@ -1,5 +1,5 @@
 <head>
-  <title><h6>Doit</h6></title>
+  <title>Doit</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="style/doit.css">
 </head>
@@ -8,9 +8,16 @@
 <body>
     {{> navbar}}
 
-<div class="container">
-    {{> addTodo}}  
-    {{> todos}}
+<div class="container"> 
+{{> layout }}
+
+
 </div>
-  
+
 </body>
+
+<template name="layout">
+	{{> Template.dynamic template=holder}}
+    {{> addTodo}}
+    {{> todos}}
+</template>

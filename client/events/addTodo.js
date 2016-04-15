@@ -13,5 +13,12 @@ Template.addTodo.events({
             });    
         $('[name="todoName"]').val('');
         }
-    }
+    },
+    'click #clear-btn': function(event) {
+        event.preventDefault();
+        var confirm = window.confirm("Sure to clear every task ?");
+        if (confirm) {
+            Meteor.call('remove_all_todos');
+        }
+    } 
 });

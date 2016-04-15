@@ -4,20 +4,13 @@
   <link rel="stylesheet" href="style/doit.css">
 </head>
 
-
 <body>
     {{> navbar}}
-
-<div class="container"> 
-{{> layout }}
-
-
-</div>
-
 </body>
 
 <template name="layout">
+<div class="container">
 	{{> Template.dynamic template=holder}}
-    {{> addTodo}}
-    {{> todos}}
+	{{> addTodo}}
+</div>
 </template>

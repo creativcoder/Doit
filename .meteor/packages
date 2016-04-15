@@ -24,3 +24,6 @@ momentjs:moment
 session
 kadira:flow-router
 kadira:blaze-layout
+accounts-github
+service-configuration
+email

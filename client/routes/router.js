@@ -1,13 +1,13 @@
 FlowRouter.route('/', {
 	name:'home',
 	action() {
-		BlazeLayout.render('layout', holder='addTodo');
+		BlazeLayout.render('layout');
 	}
 })
 
-FlowRouter.route('/github/login', {
+FlowRouter.route('/github/login/', {
 	name:'gh_login',
 	action() {
-		BlazeLayout.render('layout', holder='github_login');
+		BlazeLayout.render('github_login');
 	}
 })

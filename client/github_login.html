@@ -1,7 +1,27 @@
-
 <template name="github_login">
-    <form action="">
-        <input type="text" value="username">
-        <input type="text" value="password">
-    </form>
+	<div class="container">
+    	<div class="row">
+    	<div class="col s4"></div>
+        	<div class="col s4">
+          	<div class="card">
+            <div class="card-content">
+              <span class="card-title">Login to Doit</span>
+              <form action="">
+        	<label for="username">Username</label>
+        	<input id="username" type="text" value="">
+        	<label for="password">Pasword</label>
+        	<input id="password" type="password" value="">
+        	<input class="deep-purple btn" name="gh-log-btn" type="submit" value="Login">
+        	<p>or</p>
+        	<span class="card-title">Login with Github</span>
+			<div class="card-action">
+              <a href="#">Github Login</a>
+            </div>
+    		</form>
+          	</div>
+        	</div>
+    	</div>
+    	<div class="col s4"></div>
+	</div>
+</div>
 </template>

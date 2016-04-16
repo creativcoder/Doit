@@ -1,13 +1,15 @@
+'use strict';
+
 Template.todoItem.events({
-    'click .remove-btn':function(event) {
-        event.preventDefault();
+    'click .remove-btn': (e) => {
+        e.preventDefault();
         var confirm = window.confirm("You sure you wanna delete it ?");
         if(confirm) {
         var doc_id = this._id;
         Todos.remove({_id: doc_id});
         }
     },
-    'click .edit-btn': function(e) {
+    'click .edit-btn': (e) => {
         var parent_span = e.target.parentElement;
         parent_span.setAttribute('id','edit-mode');
 
@@ -30,10 +32,6 @@ Template.todoItem.events({
 });
 
 Template.todoItem.helpers({
-    isDisabled: function() {
-        return true;
-    },
-    createdAt_moment: function() {
-        return moment(this.createdAt).fromNow();
-    }
+    isDisabled: () => true,
+    createdAt_moment: () => (moment(this.createdAt).fromNow())
 });

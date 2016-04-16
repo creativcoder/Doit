@@ -4,7 +4,7 @@
         What you want to achieve today ?
         <input type="text" placeholder="Type a task here" name="todoName">
         <input type="submit" class="deep-purple btn" value="Add">
-        <button id="clear-btn" class="red btn">Clear All</button>
+        <button id="clear-btn" disabled="{{disabled}}" class="red btn">Clear All</button>
     </form>
     {{> todos}}
 </template>
